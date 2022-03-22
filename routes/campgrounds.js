@@ -55,10 +55,10 @@ router.post("/", isLoggedIn, isSafe, function(req, res){
       req.flash('error', 'Invalid address');
       return res.redirect('back');
     }
-    var lat = data.results[0].geometry.location.lat;
-    var lng = data.results[0].geometry.location.lng;
-    var location = data.results[0].formatted_address;
-    var newCampground = {name: name, image: image, description: desc, cost: cost, author:author, location: location, lat: lat, lng: lng};
+    // var lat = data.results[0].geometry.location.lat;
+    // var lng = data.results[0].geometry.location.lng;
+    // var location = data.results[0].formatted_address;
+    var newCampground = {name: name, image: image, description: desc, cost: cost, author:author};
     // Create a new campground and save to DB
     Campground.create(newCampground, function(err, newlyCreated){
         if(err){
@@ -101,10 +101,10 @@ router.get("/:id/edit", isLoggedIn, checkUserCampground, function(req, res){
 // PUT - updates campground in the database
 router.put("/:id", isSafe, function(req, res){
   geocoder.geocode(req.body.location, function (err, data) {
-    var lat = data.results[0].geometry.location.lat;
-    var lng = data.results[0].geometry.location.lng;
-    var location = data.results[0].formatted_address;
-    var newData = {name: req.body.name, image: req.body.image, description: req.body.description, cost: req.body.cost, location: location, lat: lat, lng: lng};
+    // var lat = data.results[0].geometry.location.lat;
+    // var lng = data.results[0].geometry.location.lng;
+    // var location = data.results[0].formatted_address;
+    var newData = {name: req.body.name, image: req.body.image, description: req.body.description, cost: req.body.cost};
     Campground.findByIdAndUpdate(req.params.id, {$set: newData}, function(err, campground){
         if(err){
             req.flash("error", err.message);

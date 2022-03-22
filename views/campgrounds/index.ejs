@@ -1,16 +1,20 @@
 <% include ../partials/header %> 
+     <!-- <% if(currentUser && currentUser.isAdmin) { %>
+      <h3>You're an admin!</h3>
+     <% } %> -->
 
      <header class="jumbotron">
          <div class="container">
-             <h1><span class="glyphicon glyphicon-tent"></span> Welcome To YelpCamp!</h1>
-             <p>View our hand-picked campgrounds from all over the world</p>
+             <h1><span class="glyphicon glyphicon-piggy-bank"></span> Welcome To MohaStock!</h1>
+             <p>This is the best platform to get stock advice and prediction data in the world</p>
              <p>
-                <a class="btn btn-primary btn-lg" href="/campgrounds/new">Add New Campground</a>
+                <a class="btn btn-primary btn-lg" href="/campgrounds/new">Add New Stock Advice</a>
+                <a class="btn btn-success btn-lg" href="http://localhost:8501/">Stock prediction</a>
              </p>
               <p>
               <form action="/campgrounds" method="GET" class="form-inline" id="campground-search">
                 <div class="form-group">
-                  <input type="text" name="search" placeholder="Campground search..." class="form-control">
+                  <input type="text" name="search" placeholder="Stock search..." class="form-control">
                 </div>
               </form>
              </p>
