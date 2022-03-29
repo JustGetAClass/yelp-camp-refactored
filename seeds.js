@@ -26,14 +26,14 @@ function seedDB(){
         if(err){
             console.log(err);
         }
-        console.log("removed campgrounds!");
+        console.log("removed stocks!");
          //add a few campgrounds
         data.forEach(function(seed){
             Campground.create(seed, function(err, campground){
                 if(err){
                     console.log(err)
                 } else {
-                    console.log("added a campground");
+                    console.log("added a stock");
                     //create a comment
                     Comment.create(
                         {

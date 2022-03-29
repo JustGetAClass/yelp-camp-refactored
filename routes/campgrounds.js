@@ -133,7 +133,7 @@ router.delete("/:id", isLoggedIn, checkUserCampground, function(req, res) {
                 req.flash('error', err.message);
                 return res.redirect('/');
             }
-            req.flash('error', 'Campground deleted!');
+            req.flash('error', 'stock deleted!');
             res.redirect('/campgrounds');
           });
       }
